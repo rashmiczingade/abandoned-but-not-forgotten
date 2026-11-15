@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abandoned But Not Forgotten | Nova_X</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;800&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{--bg:#02030a;--navy:#0a1330;--cy:#35e6ff;--mars:#d0603a;--moon:#c9ccd4;--gold:#e6b85c;--tx:#e8eefc;--mut:#a3b0cf;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px));background:var(--bg)}
+body{margin:0;background:radial-gradient(ellipse at 30% 20%,#0d1f4d 0,var(--bg) 60%);color:var(--tx);font:400 17px/1.65 Figtree,system-ui,sans-serif;overflow-x:hidden}
+#c{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,header,footer{position:relative;z-index:1}
+h1,h2,h3,.nv{font-family:Oxanium,system-ui,sans-serif}
+a{color:var(--cy)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+header{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:calc(10px + env(safe-area-inset-top,0px)) 20px 10px;background:rgba(2,3,10,.7);backdrop-filter:blur(10px);border-bottom:1px solid rgba(53,230,255,.2)}
+.logo{font:800 18px Oxanium,sans-serif;letter-spacing:.08em;color:var(--tx);text-decoration:none}
+nav{display:flex;gap:16px}
+nav a{color:var(--mut);text-decoration:none;font-size:14px;padding:6px 2px}
+nav a:hover{color:var(--cy)}
+#mb{display:none;background:none;border:1px solid var(--cy);color:var(--cy);border-radius:8px;padding:8px 12px;font:600 14px Oxanium}
+section{padding:96px 20px 40px;max-width:1100px;margin:0 auto;min-height:60vh}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:110px}
+h1{font-size:clamp(2.2rem,7vw,5rem);line-height:1.02;margin:0 0 12px;font-weight:800;max-width:11em;animation:glow 4s ease-in-out infinite alternate}
+@keyframes glow{from{text-shadow:0 0 12px rgba(53,230,255,.25)}to{text-shadow:0 0 34px rgba(53,230,255,.7)}}
+h2{font-size:clamp(1.7rem,4.5vw,2.8rem);margin:0 0 8px;font-weight:800}
+.sub{font-size:1.2rem;color:var(--moon);margin:0 0 6px}
+.team{color:var(--gold);font:600 15px Oxanium;letter-spacing:.2em;margin:0 0 26px}
+.btn{display:inline-block;margin:0 10px 10px 0;padding:13px 22px;border:1px solid var(--cy);background:rgba(53,230,255,.08);color:var(--tx);border-radius:999px;font:600 14px Oxanium;letter-spacing:.1em;text-decoration:none;cursor:pointer;transition:box-shadow .25s,background .25s}
+.btn:hover{box-shadow:0 0 24px rgba(53,230,255,.55);background:rgba(53,230,255,.2)}
+.btn.on{background:var(--cy);color:#02030a}
+.note{font-size:13px;color:var(--mut)}
+.lead{max-width:62ch;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:22px;align-items:start}
+.card,.glass{background:rgba(10,19,48,.6);backdrop-filter:blur(12px);border:1px solid rgba(53,230,255,.25);border-radius:14px;padding:18px;transition:transform .3s,border-color .3s,box-shadow .3s}
+.card:hover,.glass:hover{transform:perspective(800px) rotateX(2deg) translateY(-4px);border-color:var(--cy);box-shadow:0 10px 30px rgba(53,230,255,.15)}
+.card summary{cursor:pointer;list-style:none}
+.card summary::-webkit-details-marker{display:none}
+.card h3,.glass h3{margin:6px 0 2px;font-size:1.15rem}
+.card small{color:var(--mut)}
+.card dl{margin:12px 0 0}.card dt{color:var(--gold);font:600 13px Oxanium;margin-top:8px}.card dd{margin:0;font-size:15px;color:var(--tx)}
+.bd{display:inline-block;font:600 12px Oxanium;padding:2px 10px;border-radius:99px;border:1px solid}
+.op .bd{color:var(--cy)}.in .bd{color:var(--moon)}.lf .bd{color:var(--gold)}
+.lg{display:flex;flex-wrap:wrap;gap:8px 18px;margin:14px 0 0;font-size:14px;color:var(--mut)}
+.ctl{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:18px}
+.ctl label{display:flex;flex-direction:column;font-size:13px;color:var(--mut);gap:4px}
+.ctl input,.ctl select{background:rgba(10,19,48,.8);color:var(--tx);border:1px solid rgba(53,230,255,.35);border-radius:8px;padding:9px 12px;font:inherit;min-width:150px}
+#tl{list-style:none;margin:24px 0 0;padding:0 0 0 22px;border-left:2px solid rgba(53,230,255,.35)}
+#tl li{position:relative;margin:0 0 14px;padding:12px 16px;background:rgba(10,19,48,.6);border-radius:12px;border:1px solid rgba(255,255,255,.08);transition:opacity .6s,transform .6s}
+#tl li::before{content:"";position:absolute;left:-30px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--moon);box-shadow:0 0 10px currentColor}
+#tl li.mars::before{background:var(--mars)}
+#tl li.rv{opacity:0;transform:translateX(24px)}
+#tl summary{cursor:pointer}#tl b{color:var(--gold);font-family:Oxanium;margin-right:8px}#tl p{margin:8px 0 0;color:var(--mut)}
+.ph{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font:800 22px Oxanium;border:2px solid var(--cy);box-shadow:0 0 18px rgba(53,230,255,.4);margin-bottom:10px}
+[contenteditable]{outline-offset:2px;border-radius:4px}[contenteditable]:hover{background:rgba(53,230,255,.08)}
+#up{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25;width:46px;height:46px;border-radius:50%;border:1px solid var(--cy);background:rgba(2,3,10,.85);color:var(--cy);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s}
+#up.s{opacity:1;pointer-events:auto}
+#ld{position:fixed;inset:0;z-index:50;background:var(--bg);display:grid;place-content:center;text-align:center;font-family:Oxanium;transition:opacity .6s}
+#ld.x{opacity:0;pointer-events:none}
+#ld i{display:block;width:54px;height:54px;margin:0 auto 14px;border:3px solid rgba(53,230,255,.2);border-top-color:var(--cy);border-radius:50%;animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+footer{padding:40px 20px 60px;max-width:1100px;margin:0 auto;color:var(--mut)}
+footer li{margin:4px 0}
+body.nogl{background:radial-gradient(circle at 75% 35%,#1b4c8c 0,#0a1330 18%,var(--bg) 55%)}
+@media(max-width:820px){nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(2,3,10,.96);padding:6px 20px 14px;display:none}nav.o{display:flex}nav a{padding:12px 0;font-size:16px}#mb{display:block}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="ld" role="status"><div><i></i>Preparing launch…</div></div>
+<canvas id="c" aria-hidden="true"></canvas>
+<header>
+<a class="logo" href="#hero">NOVA_X</a>
+<button id="mb" aria-expanded="false" aria-controls="nv">Menu</button>
+<nav id="nv" class="nv" aria-label="Main">
+<a href="#story">Story</a><a href="#moon">Moon</a><a href="#mars">Mars</a><a href="#explorer">Explorer</a><a href="#timeline">Timeline</a><a href="#science">Science</a><a href="#crew">Team</a><a href="#legacy">Legacy</a><a href="#refs">References</a>
+</nav>
+</header>
+<main>
+<section id="hero">
+<h1>ABANDONED BUT NOT FORGOTTEN</h1>
+<p class="sub">The Forgotten Legacy of Human Exploration</p>
+<p class="team">NOVA_X · NASA SPACE APPS CHALLENGE 2026</p>
+<div><a class="btn" href="#explorer">EXPLORE THE MISSIONS</a><a class="btn" href="#story">DISCOVER THE STORY</a></div>
+<p class="note">Planets and spacecraft in the background are artistic visualizations, not mission imagery. Mission facts come from NASA sources listed under References.</p>
+</section>
+
+<section id="story">
+<h2>The Story</h2>
+<p class="lead">Every mission to the Moon and Mars left something behind. Here is why, and why it still matters.</p>
+<div class="grid">
+<div class="glass"><h3>Why we explore</h3><p>Exploration answers questions no laboratory on Earth can: how worlds form, whether Mars once held water, and how to keep people safe far from home.</p></div>
+<div class="glass"><h3>Why hardware stays</h3><p>Fuel is the limit. Every kilogram carried back to Earth costs more propellant, so Apollo crews left equipment on the surface to make room for lunar samples. Robotic missions were never designed to return.</p></div>
+<div class="glass"><h3>What happens to it</h3><p>With no liquid water and almost no atmosphere on the Moon, hardware weathers slowly from temperature swings, ultraviolet light and micrometeoroids. On Mars, dust covers solar panels and ends many missions.</p></div>
+<div class="glass"><h3>Why preserve it</h3><p>These sites are the first human and robotic footprints on other worlds. In 2011 NASA published recommendations for protecting the historic and scientific value of U.S. lunar artifacts.</p></div>
+</div>
+</section>
+
+<section id="moon">
+<h2>The Moon</h2>
+<p class="lead">Move your pointer or tilt your device: the Moon in the background responds. Select a card to expand it.</p>
+<div class="grid" id="mg"></div>
+</section>
+
+<section id="mars">
+<h2>Mars</h2>
+<p class="lead">Rovers, landers and the hardware that stayed behind. Each card is labeled by status.</p>
+<div class="lg"><span class="op"><span class="bd">Still operating</span></span><span class="in"><span class="bd">Inactive</span></span><span class="lf"><span class="bd">Intentionally left behind</span></span></div>
+<p class="note">Status is as documented by NASA when this site was written. Check the linked mission pages for updates.</p>
+<div class="grid" id="rg"></div>
+</section>
+
+<section id="explorer">
+<h2>Mission Explorer</h2>
+<div class="ctl">
+<div role="group" aria-label="Body" id="bb"><button class="btn on" data-b="all" aria-pressed="true">All</button><button class="btn" data-b="moon" aria-pressed="false">Moon</button><button class="btn" data-b="mars" aria-pressed="false">Mars</button></div>
+<label>Search<input id="q" type="search" placeholder="Try “rover” or “water”"></label>
+<label>Equipment<select id="cs"><option value="all">All categories</option></select></label>
+<label>Status<select id="ss"><option value="all">Any status</option><option value="op">Still operating</option><option value="in">Inactive</option><option value="lf">Intentionally left behind</option></select></label>
+<label>Landed by <span id="yl">2026</span><input id="yr" type="range" min="1966" max="2026" value="2026"></label>
+<button class="btn" id="rs">Reset filters</button>
+</div>
+<p class="note" id="cnt" aria-live="polite"></p>
+<div class="grid" id="exg"></div>
+</section>
+
+<section id="timeline">
+<h2>Space Timeline</h2>
+<div role="group" aria-label="Timeline filter"><button class="btn on" data-t="all" aria-pressed="true">All</button><button class="btn" data-t="moon" aria-pressed="false">Moon</button><button class="btn" data-t="mars" aria-pressed="false">Mars</button></div>
+<ol id="tl"></ol>
+</section>
+
+<section id="science">
+<h2>Science and Discoveries</h2>
+<div class="grid">
+<div class="glass"><h3>Lunar geology</h3><p>Apollo crews returned 382 kg of samples. Their study supports the view that the Moon formed after a giant impact early in Solar System history.</p></div>
+<div class="glass"><h3>Mars geology</h3><p>Opportunity found hematite concretions, Curiosity found an ancient lake environment in Gale Crater, and Perseverance explores a river delta in Jezero Crater.</p></div>
+<div class="glass"><h3>Space radiation</h3><p>Curiosity carries a radiation detector that measured exposure on the trip to Mars and on the surface, data that informs future crew safety.</p></div>
+<div class="glass"><h3>Planetary exploration</h3><p>InSight’s seismometer recorded over 1,300 marsquakes, revealing Mars’s crust, mantle and core. Viking’s life-detection experiments set the questions later missions still pursue.</p></div>
+<div class="glass"><h3>Engineering</h3><p>Opportunity was built for about 90 sols and worked for nearly 14 years. Ingenuity, planned for five flights, completed 72.</p></div>
+<div class="glass"><h3>Historical preservation</h3><p>Descent stages, rovers and instruments are the only physical record of the first crewed and robotic landings. Leaving them in place keeps that record intact.</p></div>
+</div>
+</section>
+
+<section id="crew">
+<h2>The Minds Behind the Mission</h2>
+<p class="lead">Team NOVA_X. Click a name or role to edit it; changes are saved in this browser only.</p>
+<div class="grid" id="tg"></div>
+</section>
+
+<section id="legacy">
+<h2>EVERY EXPLORER LEAVES A LEGACY.</h2>
+<p class="lead">A descent stage in the Sea of Tranquility, a rover silenced by dust, a cache of sample tubes waiting in Jezero: none is waste. Each is a record of what people and machines dared to do, and a guide for what comes next. Behind this text: the Moon, Mars and deep space, as an artistic view.</p>
+<a class="btn" href="#hero">BACK TO THE BEGINNING</a>
+</section>
+</main>
+
+<footer id="refs">
+<h2>References</h2>
+<p class="note">Official NASA pages. Links were assembled without network access; if one has moved, search the mission name on science.nasa.gov.</p>
+<ul>
+<li><a href="https://science.nasa.gov/moon/" target="_blank" rel="noopener">NASA Moon</a></li>
+<li><a href="https://science.nasa.gov/mission/surveyor-1/" target="_blank" rel="noopener">Surveyor 1</a></li>
+<li><a href="https://science.nasa.gov/mars/" target="_blank" rel="noopener">NASA Mars</a></li>
+<li><a href="https://science.nasa.gov/mission/viking-1/" target="_blank" rel="noopener">Viking 1</a></li>
+<li><a href="https://science.nasa.gov/mission/mars-pathfinder/" target="_blank" rel="noopener">Mars Pathfinder and Sojourner</a></li>
+<li><a href="https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/" target="_blank" rel="noopener">Spirit and Opportunity</a></li>
+<li><a href="https://science.nasa.gov/mission/phoenix/" target="_blank" rel="noopener">Phoenix</a></li>
+<li><a href="https://science.nasa.gov/mission/msl-curiosity/" target="_blank" rel="noopener">Curiosity</a></li>
+<li><a href="https://science.nasa.gov/mission/insight/" target="_blank" rel="noopener">InSight</a></li>
+<li><a href="https://science.nasa.gov/mission/mars-2020-perseverance/" target="_blank" rel="noopener">Perseverance and Ingenuity</a></li>
+</ul>
+<p class="note">NOVA_X, NASA Space Apps Challenge 2026. 3D visuals are procedural and illustrative.</p>
+</footer>
+<button id="up" aria-label="Back to top">↑</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=(s,r=document)=>r.querySelector(s),RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const SL={op:'Still operating',in:'Inactive',lf:'Intentionally left behind'};
+const M=[
+{b:'moon',n:'Apollo Lunar Module descent stages',y:1969,st:'lf',c:'Crewed hardware',loc:'Six Apollo landing sites, 1969–1972',p:'Served as landing platform and launch pad; only the ascent stage returned crews to lunar orbit.',d:'Crews returned 382 kg of samples and deployed experiments from these sites.',h:'The only places humans have landed on another world.'},
+{b:'moon',n:'Lunar Roving Vehicle',y:1971,st:'lf',c:'Rover',loc:'Apollo 15, 16 and 17 sites',p:'Carried two astronauts and samples on longer traverses than walking allowed.',d:'Let crews reach and sample geology far from the lander; Apollo 17 covered about 36 km.',h:'Three rovers remain where the crews parked them.'},
+{b:'moon',n:'Surveyor program landers',y:1966,st:'in',c:'Lander',loc:'Five successful soft landings, 1966–1968',p:'Robotic scouts testing soft landings and surface conditions before Apollo.',d:'Showed the surface could support a lander. Apollo 12 astronauts retrieved parts of Surveyor 3 in 1969.',h:'Surveyor 1 was the first U.S. soft landing on the Moon.'},
+{b:'moon',n:'Apollo Lunar Surface Experiments Package (ALSEP)',y:1969,st:'in',c:'Instrument',loc:'Apollo 12, 14, 15, 16 and 17 sites',p:'Nuclear-powered science stations with seismometers and other sensors.',d:'Recorded moonquakes and monitored the lunar environment for years.',h:'NASA ended ALSEP operations on September 30, 1977.'},
+{b:'moon',n:'Lunar retroreflectors',y:1969,st:'lf',c:'Instrument',loc:'Apollo 11, 14 and 15 sites',p:'Passive mirror arrays that reflect laser pulses back to Earth.',d:'Enable precise measurements of the Earth–Moon distance.',h:'Still used by observatories, with no power needed.'},
+{b:'mars',n:'Viking 1 and Viking 2 landers',y:1976,st:'in',c:'Lander',loc:'Chryse Planitia and Utopia Planitia',p:'First U.S. Mars landers, carrying cameras, weather sensors and life-detection experiments.',d:'Returned the first surface images and weather data; life results were inconclusive.',h:'Viking 1 last made contact November 11, 1982; Viking 2 ended April 11, 1980.'},
+{b:'mars',n:'Mars Pathfinder and Sojourner',y:1997,st:'in',c:'Rover',loc:'Ares Vallis',p:'Proved low-cost landing and the first rover on Mars.',d:'Analyzed rocks and soil and returned thousands of images.',h:'Pathfinder’s last transmission was September 27, 1997.'},
+{b:'mars',n:'Spirit rover',y:2004,st:'in',c:'Rover',loc:'Gusev Crater',p:'Geologic robot searching for signs of past water.',d:'Found silica-rich soil and rock evidence of past water activity.',h:'Last contact March 22, 2010, after becoming stuck in soft soil.'},
+{b:'mars',n:'Opportunity rover',y:2004,st:'in',c:'Rover',loc:'Meridiani Planum',p:'Twin of Spirit, built for a 90-sol mission.',d:'Found hematite concretions and evidence of past water.',h:'Last communicated June 10, 2018 during a dust storm; mission declared complete in 2019.'},
+{b:'mars',n:'Phoenix lander',y:2008,st:'in',c:'Lander',loc:'Northern plains',p:'Dug into Martian polar-region soil.',d:'Confirmed water ice below the surface.',h:'Ended in November 2008 as winter darkness set in.'},
+{b:'mars',n:'Curiosity rover',y:2012,st:'op',c:'Rover',loc:'Gale Crater',p:'Mobile laboratory assessing whether Mars was ever habitable.',d:'Found an ancient lake environment with chemistry suited to microbial life.',h:'Still operating per NASA at time of writing.'},
+{b:'mars',n:'InSight lander',y:2018,st:'in',c:'Lander',loc:'Elysium Planitia',p:'Studied the interior of Mars with a seismometer.',d:'Recorded over 1,300 marsquakes.',h:'NASA declared the mission over December 21, 2022.'},
+{b:'mars',n:'Perseverance rover',y:2021,st:'op',c:'Rover',loc:'Jezero Crater',p:'Seeks signs of ancient life and caches samples for possible return to Earth.',d:'Exploring an ancient river delta and collecting rock cores.',h:'Still operating per NASA at time of writing.'},
+{b:'mars',n:'Ingenuity helicopter',y:2021,st:'in',c:'Aircraft',loc:'Jezero Crater',p:'Technology demonstration of powered flight on another planet.',d:'Made 72 flights, far beyond the five planned.',h:'Mission ended in January 2024 after rotor damage; it remains on Mars.'},
+{b:'mars',n:'Perseverance sample depot',y:2022,st:'lf',c:'Sample cache',loc:'Jezero Crater',p:'Sample tubes set on the surface as a backup for a future return mission.',d:'Rock cores that record Mars’s ancient environment.',h:'Hardware deliberately left for later retrieval.'}
+];
+const T=[['May 30, 1966','moon','Surveyor 1 launches','Lands June 2: the first U.S. soft landing on the Moon.'],['Jul 16, 1969','moon','Apollo 11 launches','Landing on July 20 puts the first descent stage on the Moon.'],['Nov 19, 1969','moon','Apollo 12 lands near Surveyor 3','The crew retrieved parts of the earlier lander.'],['Jul 30, 1971','moon','Apollo 15 lands','First crew to drive a Lunar Roving Vehicle.'],['Dec 14, 1972','moon','Apollo 17 leaves the Moon','Last time humans left the lunar surface.'],['Aug 20, 1975','mars','Viking 1 launches','Landing on July 20, 1976 begins surface operations on Mars.'],['Sep 30, 1977','moon','ALSEP shut down','NASA ended operations of the Apollo science stations.'],['Nov 11, 1982','mars','Viking 1 last contact','End of the longest-running early Mars lander.'],['Jul 4, 1997','mars','Pathfinder lands','Sojourner becomes the first rover on Mars.'],['Jan 2004','mars','Spirit and Opportunity land','Spirit on January 4 and Opportunity on January 25 (UTC).'],['Nov 2008','mars','Phoenix ends','Winter darkness ended the mission after it confirmed water ice.'],['Mar 22, 2010','mars','Spirit last contact','NASA ended recovery attempts in 2011.'],['Nov 26, 2011','mars','Curiosity launches','Landing in Gale Crater follows on August 6, 2012 (UTC).'],['Jun 10, 2018','mars','Opportunity last communication','A global dust storm; mission declared complete February 2019.'],['Feb 18, 2021','mars','Perseverance lands','Launched July 30, 2020; Ingenuity first flew April 19, 2021.'],['Dec 21, 2022','mars','InSight mission ends','After detecting over 1,300 marsquakes.'],['Jan 2024','mars','Ingenuity mission ends','After 72 flights.']];
+const card=m=>`<details class="card ${m.st}"><summary><span class="bd">${SL[m.st]}</span><h3>${m.n}</h3><small>${m.y}, ${m.loc}</small></summary><dl><dt>Purpose</dt><dd>${m.p}</dd><dt>Discoveries</dt><dd>${m.d}</dd><dt>Why it matters</dt><dd>${m.h}</dd></dl></details>`;
+$('#mg').innerHTML=M.filter(m=>m.b=='moon').map(card).join('');
+$('#rg').innerHTML=M.filter(m=>m.b=='mars').map(card).join('');
+// Explorer
+const st={b:'all',q:'',c:'all',s:'all',y:2026};
+[...new Set(M.map(m=>m.c))].forEach(c=>$('#cs').add(new Option(c,c)));
+function ex(){const q=st.q.trim().toLowerCase();const r=M.filter(m=>(st.b=='all'||m.b==st.b)&&(st.c=='all'||m.c==st.c)&&(st.s=='all'||m.st==st.s)&&m.y<=st.y&&(m.n+m.loc+m.p+m.d+m.h).toLowerCase().includes(q));
+$('#exg').innerHTML=r.map(card).join('')||'<p>No missions match. Clear the search or reset the filters.</p>';$('#cnt').textContent=`Showing ${r.length} of ${M.length} missions`}
+function pick(box,key,cb){box.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;box.querySelectorAll('button').forEach(x=>{x.classList.toggle('on',x==b);x.setAttribute('aria-pressed',x==b)});cb(b.dataset[key])})}
+pick($('#bb'),'b',v=>{st.b=v;ex()});
+$('#q').oninput=e=>{st.q=e.target.value;ex()};
+$('#cs').onchange=e=>{st.c=e.target.value;ex()};
+$('#ss').onchange=e=>{st.s=e.target.value;ex()};
+$('#yr').oninput=e=>{st.y=+e.target.value;$('#yl').textContent=st.y;ex()};
+$('#rs').onclick=()=>{Object.assign(st,{b:'all',q:'',c:'all',s:'all',y:2026});$('#q').value='';$('#cs').value='all';$('#ss').value='all';$('#yr').value=2026;$('#yl').textContent=2026;const bs=$('#bb').querySelectorAll('button');bs.forEach((x,i)=>{x.classList.toggle('on',i==0);x.setAttribute('aria-pressed',i==0)});ex()};
+ex();
+// Timeline
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('rv');io.unobserve(e.target)}}),{threshold:.15}):null;
+function tl(f){$('#tl').innerHTML=T.filter(t=>f=='all'||t[1]==f).map(t=>`<li class="${t[1]}${io&&!RM?' rv':''}"><details><summary><b>${t[0]}</b>${t[2]}</summary><p>${t[3]}</p></details></li>`).join('');if(io&&!RM)document.querySelectorAll('#tl li').forEach(l=>io.observe(l))}
+pick($('#timeline [role=group]'),'t',tl);tl('all');
+// Team (editable, saved locally)
+let TM=[];try{TM=JSON.parse(localStorage.getItem('novax-team')||'[]')}catch(e){}
+$('#tg').innerHTML=[0,1,2,3].map(i=>{const m=TM[i]||{};return `<div class="glass"><div class="ph">N${i+1}</div><h3 contenteditable="true" spellcheck="false" data-i="${i}" data-k="n" role="textbox" aria-label="Member ${i+1} name">${m.n||'Team member '+(i+1)}</h3><p contenteditable="true" spellcheck="false" data-i="${i}" data-k="r" role="textbox" aria-label="Member ${i+1} role">${m.r||'Role'}</p></div>`}).join('');
+$('#tg').addEventListener('input',e=>{const d=e.target.dataset;if(!d.k)return;TM[d.i]=TM[d.i]||{};TM[d.i][d.k]=e.target.textContent;try{localStorage.setItem('novax-team',JSON.stringify(TM))}catch(x){}});
+// Nav, back to top
+const nv=$('#nv'),mb=$('#mb');
+mb.onclick=()=>mb.setAttribute('aria-expanded',nv.classList.toggle('o'));
+nv.onclick=e=>{if(e.target.closest('a')){nv.classList.remove('o');mb.setAttribute('aria-expanded',false)}};
+const up=$('#up');up.onclick=()=>scrollTo({top:0,behavior:RM?'auto':'smooth'});
+addEventListener('scroll',()=>up.classList.toggle('s',scrollY>600),{passive:true});
+// 3D scene
+function scene(){
+if(typeof THREE==='undefined'){document.body.classList.add('nogl');return}
+let R;try{R=new THREE.WebGLRenderer({canvas:$('#c'),alpha:true})}catch(e){document.body.classList.add('nogl');return}
+const lite=innerWidth<820;R.setPixelRatio(Math.min(devicePixelRatio,lite?1.25:1.75));
+const S=new THREE.Scene(),C=new THREE.PerspectiveCamera(55,1,.1,300),rnd=a=>Math.random()*a;
+S.add(new THREE.AmbientLight(0x6677aa,.55));const sun=new THREE.DirectionalLight(0xffffff,1.3);sun.position.set(-5,4,8);S.add(sun);
+const tex=fn=>{const c=document.createElement('canvas');c.width=512;c.height=256;fn(c.getContext('2d'));return new THREE.CanvasTexture(c)};
+const dots=(x,n,col,r0,r1)=>{x.fillStyle=col;for(let i=0;i<n;i++){x.beginPath();x.arc(rnd(512),rnd(256),r0+rnd(r1),0,7);x.fill()}};
+const tE=tex(x=>{x.fillStyle='#0b3d7a';x.fillRect(0,0,512,256);dots(x,70,'#2f6b3a',6,26);dots(x,110,'rgba(255,255,255,.2)',6,18)});
+const tM=tex(x=>{x.fillStyle='#8a8a90';x.fillRect(0,0,512,256);dots(x,260,'rgba(20,20,25,.16)',2,12);dots(x,200,'rgba(255,255,255,.07)',2,8)});
+const tR=tex(x=>{x.fillStyle='#a4482a';x.fillRect(0,0,512,256);dots(x,90,'rgba(60,20,10,.28)',6,22);dots(x,120,'rgba(225,150,100,.16)',4,14)});
+const mk=(t,r,sg)=>{const m=new THREE.Mesh(new THREE.SphereGeometry(r,lite?32:48,lite?24:36),new THREE.MeshStandardMaterial({map:t,roughness:1}));m.userData.sg=sg;S.add(m);return m};
+const E=mk(tE,2.6,1),Mo=mk(tM,3,-1),Ma=mk(tR,3.4,1);
+const atm=new THREE.Mesh(new THREE.SphereGeometry(2.8,32,24),new THREE.MeshBasicMaterial({color:0x35e6ff,transparent:true,opacity:.18,side:THREE.BackSide,blending:THREE.AdditiveBlending}));E.add(atm);
+const gold=new THREE.MeshStandardMaterial({color:0xe6b85c,metalness:.6,roughness:.4}),grey=new THREE.MeshStandardMaterial({color:0xc9ccd4,metalness:.4,roughness:.6}),blue=new THREE.MeshStandardMaterial({color:0x2a5db0,metalness:.3,roughness:.5});
+const mesh=(g,m,x,y,z)=>{const o=new THREE.Mesh(g,m);o.position.set(x,y,z);return o};
+const ship=new THREE.Group();ship.add(mesh(new THREE.CylinderGeometry(.25,.25,1,16),grey,0,0,0),mesh(new THREE.ConeGeometry(.25,.5,16),gold,0,.75,0),mesh(new THREE.BoxGeometry(1.8,.04,.5),blue,0,-.1,0));ship.rotation.z=.9;S.add(ship);
+const lander=new THREE.Group();lander.add(mesh(new THREE.CylinderGeometry(.45,.6,.5,8),gold,0,0,0));[[1,1],[-1,1],[1,-1],[-1,-1]].forEach(p=>lander.add(mesh(new THREE.CylinderGeometry(.03,.03,.9,6),grey,p[0]*.6,-.4,p[1]*.6)));S.add(lander);
+const rover=new THREE.Group();rover.add(mesh(new THREE.BoxGeometry(.9,.3,.6),grey,0,.2,0));for(let i=0;i<6;i++){const w=mesh(new THREE.CylinderGeometry(.14,.14,.1,12),gold,(i%3-1)*.35,0,i<3?.35:-.35);w.rotation.x=Math.PI/2;rover.add(w)}S.add(rover);
+const n=lite?600:1400,pos=new Float32Array(n*3);for(let i=0;i<n;i++){pos[i*3]=(Math.random()-.5)*160;pos[i*3+1]=(Math.random()-.5)*90;pos[i*3+2]=20-rnd(130)}
+const sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(pos,3));const stars=new THREE.Points(sg,new THREE.PointsMaterial({size:.22,color:0xffffff,transparent:true,opacity:.85}));S.add(stars);
+let K=[],ox=3.5,mx=0,my=0,cz=8,tz=8,raf=0;
+function layout(){const w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();ox=w/h<1?1.3:3.6;
+E.position.set(ox,0,0);Mo.position.set(-ox,0,-30);Ma.position.set(ox,0,-60);ship.position.set(-ox*.45,.8,2);lander.position.set(ox*.4,-1.8,-24);rover.position.set(-ox*.3,-1.9,-54);
+const mx_=Math.max(1,document.documentElement.scrollHeight-h),f=id=>Math.min(1,Math.max(0,(document.getElementById(id).offsetTop+document.getElementById(id).offsetHeight/2-h/2)/mx_));
+K=[[0,8],[f('moon'),-22],[f('mars'),-52],[f('legacy'),-12],[1,-12]]}
+function zAt(p){for(let i=1;i<K.length;i++)if(p<=K[i][0]||i==K.length-1){const a=K[i-1],b=K[i],t=b[0]==a[0]?1:Math.min(1,Math.max(0,(p-a[0])/(b[0]-a[0])));return a[1]+(b[1]-a[1])*t}return 8}
+const pm=e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},dev=e=>{if(e.gamma!=null){mx=Math.max(-.5,Math.min(.5,e.gamma/90));my=Math.max(-.5,Math.min(.5,(e.beta-45)/90))}};
+addEventListener('pointermove',pm,{passive:true});addEventListener('deviceorientation',dev);addEventListener('resize',layout);
+function loop(t){raf=requestAnimationFrame(loop);if(document.hidden)return;
+tz=zAt(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight));cz+=(tz-cz)*(RM?1:.07);
+C.position.set(mx*.9,.4-my*.5,cz);C.lookAt(mx*.4,0,cz-10);
+if(!RM){const s=t*.001;[E,Mo,Ma].forEach(p=>{p.rotation.y+=.0018;p.rotation.x+=((my*.35)-p.rotation.x)*.03});ship.position.y=.8+Math.sin(s)*.15;ship.rotation.y=s*.4;lander.rotation.y=s*.3;rover.rotation.y=-s*.3;stars.rotation.z=s*.004}
+R.render(S,C)}
+layout();setTimeout(layout,800);loop(0);
+function dispose(){cancelAnimationFrame(raf);removeEventListener('pointermove',pm);removeEventListener('deviceorientation',dev);removeEventListener('resize',layout);S.traverse(o=>{if(o.geometry)o.geometry.dispose();if(o.material)(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>{if(m.map)m.map.dispose();m.dispose()})});R.dispose()}
+addEventListener('pagehide',dispose,{once:true});
+$('#c').addEventListener('webglcontextlost',e=>{e.preventDefault();cancelAnimationFrame(raf);document.body.classList.add('nogl')});
+}
+try{scene()}catch(e){console.warn('3D disabled:',e);document.body.classList.add('nogl')}
+const hide=()=>$('#ld').classList.add('x');
+document.readyState=='complete'?setTimeout(hide,500):addEventListener('load',()=>setTimeout(hide,500));
+setTimeout(hide,4000);
+</script>
+</body>
+</html>
